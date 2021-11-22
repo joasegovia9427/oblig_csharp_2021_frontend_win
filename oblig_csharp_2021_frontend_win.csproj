@@ -1,0 +1,308 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{25CA488B-75C3-4E3B-A8C3-4FBF95F5FB5E}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>oblig_csharp_2021_frontend_win</RootNamespace>
+    <AssemblyName>oblig_csharp_2021_frontend_win</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Album\AlbumCancionListar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Album\AlbumCancionListar.Designer.cs">
+      <DependentUpon>AlbumCancionListar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Album\AlbumListar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Album\AlbumListar.Designer.cs">
+      <DependentUpon>AlbumListar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Banda\BandaIntegranteListar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Banda\BandaIntegranteListar.Designer.cs">
+      <DependentUpon>BandaIntegranteListar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Banda\BandaAlbumesListar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Banda\BandaAlbumesListar.Designer.cs">
+      <DependentUpon>BandaAlbumesListar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Banda\BandaListado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Banda\BandaListado.Designer.cs">
+      <DependentUpon>BandaListado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BG.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BG.Designer.cs">
+      <DependentUpon>BG.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cancion\CancionListar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cancion\CancionListar.Designer.cs">
+      <DependentUpon>CancionListar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\ServicioSoap\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Enumerados\EntidadModo.cs" />
+    <Compile Include="Enumerados\RespuestaTipo.cs" />
+    <Compile Include="GeneroMusical\GeneroMusicalListar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GeneroMusical\GeneroMusicalListar.Designer.cs">
+      <DependentUpon>GeneroMusicalListar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InicioMenuPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InicioMenuPrincipal.Designer.cs">
+      <DependentUpon>InicioMenuPrincipal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Integrante\IntegranteListar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Integrante\IntegranteListar.Designer.cs">
+      <DependentUpon>IntegranteListar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProcsMasivos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProcsMasivos.Designer.cs">
+      <DependentUpon>ProcsMasivos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="RecursosGraficos\TextosEnPantalla.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TextosEnPantalla.resx</DependentUpon>
+    </Compile>
+    <Compile Include="ServiciosWebs\WebServiceStub.cs" />
+    <Compile Include="Util.cs" />
+    <EmbeddedResource Include="Album\AlbumCancionListar.resx">
+      <DependentUpon>AlbumCancionListar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Album\AlbumListar.resx">
+      <DependentUpon>AlbumListar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Banda\BandaIntegranteListar.resx">
+      <DependentUpon>BandaIntegranteListar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Banda\BandaAlbumesListar.resx">
+      <DependentUpon>BandaAlbumesListar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Banda\BandaListado.resx">
+      <DependentUpon>BandaListado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BG.resx">
+      <DependentUpon>BG.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cancion\CancionListar.resx">
+      <DependentUpon>CancionListar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GeneroMusical\GeneroMusicalListar.resx">
+      <DependentUpon>GeneroMusicalListar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InicioMenuPrincipal.resx">
+      <DependentUpon>InicioMenuPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Integrante\IntegranteListar.resx">
+      <DependentUpon>IntegranteListar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProcsMasivos.resx">
+      <DependentUpon>ProcsMasivos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RecursosGraficos\TextosEnPantalla.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>TextosEnPantalla.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="Connected Services\ServicioSoap\MusicUDE-Service.wsdl" />
+    <None Include="Connected Services\ServicioSoap\oblig_csharp_2021_frontend_win.ServicioSoap.AlbumAltaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServicioSoap\oblig_csharp_2021_frontend_win.ServicioSoap.AlbumCancionListadoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServicioSoap\oblig_csharp_2021_frontend_win.ServicioSoap.AlbumListadoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServicioSoap\oblig_csharp_2021_frontend_win.ServicioSoap.AlbumModificarResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServicioSoap\oblig_csharp_2021_frontend_win.ServicioSoap.AlbumObtenerResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServicioSoap\oblig_csharp_2021_frontend_win.ServicioSoap.BandaAlbumListadoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServicioSoap\oblig_csharp_2021_frontend_win.ServicioSoap.BandaAltaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServicioSoap\oblig_csharp_2021_frontend_win.ServicioSoap.BandaIntegranteListadoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServicioSoap\oblig_csharp_2021_frontend_win.ServicioSoap.BandaListadoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServicioSoap\oblig_csharp_2021_frontend_win.ServicioSoap.BandaModificarResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServicioSoap\oblig_csharp_2021_frontend_win.ServicioSoap.BandaObtenerResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServicioSoap\oblig_csharp_2021_frontend_win.ServicioSoap.CancionAltaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServicioSoap\oblig_csharp_2021_frontend_win.ServicioSoap.CancionListadoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServicioSoap\oblig_csharp_2021_frontend_win.ServicioSoap.CancionModificacionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServicioSoap\oblig_csharp_2021_frontend_win.ServicioSoap.CancionObtenerResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServicioSoap\oblig_csharp_2021_frontend_win.ServicioSoap.GeneroMusicalAltaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServicioSoap\oblig_csharp_2021_frontend_win.ServicioSoap.GeneroMusicalListadoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServicioSoap\oblig_csharp_2021_frontend_win.ServicioSoap.GeneroMusicalModificacionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServicioSoap\oblig_csharp_2021_frontend_win.ServicioSoap.IntegranteAltaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServicioSoap\oblig_csharp_2021_frontend_win.ServicioSoap.IntegranteModificacionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServicioSoap\oblig_csharp_2021_frontend_win.ServicioSoap.IntegranteObtenerResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServicioSoap\oblig_csharp_2021_frontend_win.ServicioSoap.IntegrantesListadoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServicioSoap\oblig_csharp_2021_frontend_win.ServicioSoap.VOAlbum.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServicioSoap\oblig_csharp_2021_frontend_win.ServicioSoap.VOBanda.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServicioSoap\oblig_csharp_2021_frontend_win.ServicioSoap.VOCancion.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServicioSoap\oblig_csharp_2021_frontend_win.ServicioSoap.VOGeneroMusical.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServicioSoap\oblig_csharp_2021_frontend_win.ServicioSoap.VOIntegrante.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="RecursosGraficos\flechaArriba.gif" />
+    <None Include="RecursosGraficos\PageLast.png" />
+    <None Include="RecursosGraficos\PageFirst.png" />
+    <None Include="RecursosGraficos\PageNext.png" />
+    <None Include="RecursosGraficos\PagePrevious.png" />
+    <None Include="RecursosGraficos\iconCancion.png" />
+    <None Include="RecursosGraficos\singer.png" />
+    <None Include="RecursosGraficos\IMG_0842.gif" />
+    <None Include="Connected Services\ServicioSoap\MusicUDE-Service.disco" />
+    <None Include="Connected Services\ServicioSoap\configuration91.svcinfo" />
+    <None Include="Connected Services\ServicioSoap\configuration.svcinfo" />
+    <None Include="Connected Services\ServicioSoap\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="RecursosGraficos\apple-music-3521279-2944783.png" />
+    <Content Include="RecursosGraficos\Bitmap1.bmp" />
+    <None Include="RecursosGraficos\ezgif.com-gif-maker.gif" />
+    <Content Include="RecursosGraficos\Favicon.ico" />
+    <None Include="RecursosGraficos\PlaceHolderImage.png" />
+    <None Include="RecursosGraficos\spin-icon-2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\ServicioSoap\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

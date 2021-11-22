@@ -1,0 +1,1393 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="GeneroMusicalAlta">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="genero" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GeneroMusicalAltaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GeneroMusicalAltaResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GeneroMusicalModificacion">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="genero" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GeneroMusicalModificacionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GeneroMusicalModificacionResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GeneroMusicalBaja">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GeneroMusicalBajaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GeneroMusicalBajaResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GeneroMusicalListado">
+        <s:complexType />
+      </s:element>
+      <s:element name="GeneroMusicalListadoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GeneroMusicalListadoResult" type="tns:ArrayOfVOGeneroMusical" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfVOGeneroMusical">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="VOGeneroMusical" nillable="true" type="tns:VOGeneroMusical" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="VOGeneroMusical">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="genero" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Error" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="IntegrantesListado">
+        <s:complexType />
+      </s:element>
+      <s:element name="IntegrantesListadoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="IntegrantesListadoResult" type="tns:ArrayOfVOIntegrante" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfVOIntegrante">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="VOIntegrante" nillable="true" type="tns:VOIntegrante" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="VOIntegrante">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="FechaNacimiento" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="Foto" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Persona" type="tns:VOPersona" />
+          <s:element minOccurs="1" maxOccurs="1" name="BandaId" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Error" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="VOPersona">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Nombre" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Apellido" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Error" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="IntegranteAlta">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="integrante" type="tns:VOIntegrante" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IntegranteAltaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="IntegranteAltaResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IntegranteBaja">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IntegranteBajaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="IntegranteBajaResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IntegranteModificacion">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="integrante" type="tns:VOIntegrante" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IntegranteModificacionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="IntegranteModificacionResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IntegranteObtener">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IntegranteObtenerResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="IntegranteObtenerResult" type="tns:VOIntegrante" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BandaObtener">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BandaObtenerResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="BandaObtenerResult" type="tns:VOBanda" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="VOBanda">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Nombre" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="AnioCreacion" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="AnioSeparacion" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Genero" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Integrantes" type="tns:ArrayOfVOIntegrante" />
+          <s:element minOccurs="0" maxOccurs="1" name="Error" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="BandaListado">
+        <s:complexType />
+      </s:element>
+      <s:element name="BandaListadoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="BandaListadoResult" type="tns:ArrayOfVOBanda" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfVOBanda">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="VOBanda" nillable="true" type="tns:VOBanda" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="BandaAlta">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="banda" type="tns:VOBanda" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BandaAltaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="BandaAltaResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BandaBaja">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BandaBajaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="BandaBajaResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BandaModificar">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="banda" type="tns:VOBanda" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BandaModificarResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="BandaModificarResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CancionListado">
+        <s:complexType />
+      </s:element>
+      <s:element name="CancionListadoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CancionListadoResult" type="tns:ArrayOfVOCancion" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfVOCancion">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="VOCancion" nillable="true" type="tns:VOCancion" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="VOCancion">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Nombre" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Duracion" type="s:float" />
+          <s:element minOccurs="1" maxOccurs="1" name="Anio" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Dato" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="IntegranteId" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Genero" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Error" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="CancionAlta">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cancion" type="tns:VOCancion" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CancionAltaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CancionAltaResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CancionBaja">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CancionBajaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CancionBajaResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CancionModificacion">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cancion" type="tns:VOCancion" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CancionModificacionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CancionModificacionResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CancionObtener">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CancionObtenerResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CancionObtenerResult" type="tns:VOCancion" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AlbumObtener">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AlbumObtenerResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AlbumObtenerResult" type="tns:VOAlbum" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="VOAlbum">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Nombre" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="AnioCreacion" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Genero" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Banda" type="tns:VOBanda" />
+          <s:element minOccurs="0" maxOccurs="1" name="Canciones" type="tns:ArrayOfVOCancion" />
+          <s:element minOccurs="0" maxOccurs="1" name="Error" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="AlbumListado">
+        <s:complexType />
+      </s:element>
+      <s:element name="AlbumListadoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AlbumListadoResult" type="tns:ArrayOfVOAlbum" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfVOAlbum">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="VOAlbum" nillable="true" type="tns:VOAlbum" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="AlbumAlta">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="album" type="tns:VOAlbum" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AlbumAltaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AlbumAltaResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AlbumBaja">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AlbumBajaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AlbumBajaResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AlbumModificar">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="album" type="tns:VOAlbum" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AlbumModificarResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AlbumModificarResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BandaIntegranteListado">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BandaIntegranteListadoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="BandaIntegranteListadoResult" type="tns:ArrayOfVOIntegrante" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BandaIntegranteAlta">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="BandaId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="IntegranteId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BandaIntegranteAltaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="BandaIntegranteAltaResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BandaIntegranteBaja">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="IntegranteId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BandaIntegranteBajaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="BandaIntegranteBajaResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BandaAlbumListado">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BandaAlbumListadoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="BandaAlbumListadoResult" type="tns:ArrayOfVOAlbum" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AlbumCancionListado">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AlbumCancionListadoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AlbumCancionListadoResult" type="tns:ArrayOfVOCancion" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AlbumCancionAlta">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AlbumId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="CancionId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AlbumCancionAltaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AlbumCancionAltaResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AlbumCancionBaja">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AlbumId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="CancionId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AlbumCancionBajaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AlbumCancionBajaResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GeneroMusicalAltaSoapIn">
+    <wsdl:part name="parameters" element="tns:GeneroMusicalAlta" />
+  </wsdl:message>
+  <wsdl:message name="GeneroMusicalAltaSoapOut">
+    <wsdl:part name="parameters" element="tns:GeneroMusicalAltaResponse" />
+  </wsdl:message>
+  <wsdl:message name="GeneroMusicalModificacionSoapIn">
+    <wsdl:part name="parameters" element="tns:GeneroMusicalModificacion" />
+  </wsdl:message>
+  <wsdl:message name="GeneroMusicalModificacionSoapOut">
+    <wsdl:part name="parameters" element="tns:GeneroMusicalModificacionResponse" />
+  </wsdl:message>
+  <wsdl:message name="GeneroMusicalBajaSoapIn">
+    <wsdl:part name="parameters" element="tns:GeneroMusicalBaja" />
+  </wsdl:message>
+  <wsdl:message name="GeneroMusicalBajaSoapOut">
+    <wsdl:part name="parameters" element="tns:GeneroMusicalBajaResponse" />
+  </wsdl:message>
+  <wsdl:message name="GeneroMusicalListadoSoapIn">
+    <wsdl:part name="parameters" element="tns:GeneroMusicalListado" />
+  </wsdl:message>
+  <wsdl:message name="GeneroMusicalListadoSoapOut">
+    <wsdl:part name="parameters" element="tns:GeneroMusicalListadoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IntegrantesListadoSoapIn">
+    <wsdl:part name="parameters" element="tns:IntegrantesListado" />
+  </wsdl:message>
+  <wsdl:message name="IntegrantesListadoSoapOut">
+    <wsdl:part name="parameters" element="tns:IntegrantesListadoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IntegranteAltaSoapIn">
+    <wsdl:part name="parameters" element="tns:IntegranteAlta" />
+  </wsdl:message>
+  <wsdl:message name="IntegranteAltaSoapOut">
+    <wsdl:part name="parameters" element="tns:IntegranteAltaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IntegranteBajaSoapIn">
+    <wsdl:part name="parameters" element="tns:IntegranteBaja" />
+  </wsdl:message>
+  <wsdl:message name="IntegranteBajaSoapOut">
+    <wsdl:part name="parameters" element="tns:IntegranteBajaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IntegranteModificacionSoapIn">
+    <wsdl:part name="parameters" element="tns:IntegranteModificacion" />
+  </wsdl:message>
+  <wsdl:message name="IntegranteModificacionSoapOut">
+    <wsdl:part name="parameters" element="tns:IntegranteModificacionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IntegranteObtenerSoapIn">
+    <wsdl:part name="parameters" element="tns:IntegranteObtener" />
+  </wsdl:message>
+  <wsdl:message name="IntegranteObtenerSoapOut">
+    <wsdl:part name="parameters" element="tns:IntegranteObtenerResponse" />
+  </wsdl:message>
+  <wsdl:message name="BandaObtenerSoapIn">
+    <wsdl:part name="parameters" element="tns:BandaObtener" />
+  </wsdl:message>
+  <wsdl:message name="BandaObtenerSoapOut">
+    <wsdl:part name="parameters" element="tns:BandaObtenerResponse" />
+  </wsdl:message>
+  <wsdl:message name="BandaListadoSoapIn">
+    <wsdl:part name="parameters" element="tns:BandaListado" />
+  </wsdl:message>
+  <wsdl:message name="BandaListadoSoapOut">
+    <wsdl:part name="parameters" element="tns:BandaListadoResponse" />
+  </wsdl:message>
+  <wsdl:message name="BandaAltaSoapIn">
+    <wsdl:part name="parameters" element="tns:BandaAlta" />
+  </wsdl:message>
+  <wsdl:message name="BandaAltaSoapOut">
+    <wsdl:part name="parameters" element="tns:BandaAltaResponse" />
+  </wsdl:message>
+  <wsdl:message name="BandaBajaSoapIn">
+    <wsdl:part name="parameters" element="tns:BandaBaja" />
+  </wsdl:message>
+  <wsdl:message name="BandaBajaSoapOut">
+    <wsdl:part name="parameters" element="tns:BandaBajaResponse" />
+  </wsdl:message>
+  <wsdl:message name="BandaModificarSoapIn">
+    <wsdl:part name="parameters" element="tns:BandaModificar" />
+  </wsdl:message>
+  <wsdl:message name="BandaModificarSoapOut">
+    <wsdl:part name="parameters" element="tns:BandaModificarResponse" />
+  </wsdl:message>
+  <wsdl:message name="CancionListadoSoapIn">
+    <wsdl:part name="parameters" element="tns:CancionListado" />
+  </wsdl:message>
+  <wsdl:message name="CancionListadoSoapOut">
+    <wsdl:part name="parameters" element="tns:CancionListadoResponse" />
+  </wsdl:message>
+  <wsdl:message name="CancionAltaSoapIn">
+    <wsdl:part name="parameters" element="tns:CancionAlta" />
+  </wsdl:message>
+  <wsdl:message name="CancionAltaSoapOut">
+    <wsdl:part name="parameters" element="tns:CancionAltaResponse" />
+  </wsdl:message>
+  <wsdl:message name="CancionBajaSoapIn">
+    <wsdl:part name="parameters" element="tns:CancionBaja" />
+  </wsdl:message>
+  <wsdl:message name="CancionBajaSoapOut">
+    <wsdl:part name="parameters" element="tns:CancionBajaResponse" />
+  </wsdl:message>
+  <wsdl:message name="CancionModificacionSoapIn">
+    <wsdl:part name="parameters" element="tns:CancionModificacion" />
+  </wsdl:message>
+  <wsdl:message name="CancionModificacionSoapOut">
+    <wsdl:part name="parameters" element="tns:CancionModificacionResponse" />
+  </wsdl:message>
+  <wsdl:message name="CancionObtenerSoapIn">
+    <wsdl:part name="parameters" element="tns:CancionObtener" />
+  </wsdl:message>
+  <wsdl:message name="CancionObtenerSoapOut">
+    <wsdl:part name="parameters" element="tns:CancionObtenerResponse" />
+  </wsdl:message>
+  <wsdl:message name="AlbumObtenerSoapIn">
+    <wsdl:part name="parameters" element="tns:AlbumObtener" />
+  </wsdl:message>
+  <wsdl:message name="AlbumObtenerSoapOut">
+    <wsdl:part name="parameters" element="tns:AlbumObtenerResponse" />
+  </wsdl:message>
+  <wsdl:message name="AlbumListadoSoapIn">
+    <wsdl:part name="parameters" element="tns:AlbumListado" />
+  </wsdl:message>
+  <wsdl:message name="AlbumListadoSoapOut">
+    <wsdl:part name="parameters" element="tns:AlbumListadoResponse" />
+  </wsdl:message>
+  <wsdl:message name="AlbumAltaSoapIn">
+    <wsdl:part name="parameters" element="tns:AlbumAlta" />
+  </wsdl:message>
+  <wsdl:message name="AlbumAltaSoapOut">
+    <wsdl:part name="parameters" element="tns:AlbumAltaResponse" />
+  </wsdl:message>
+  <wsdl:message name="AlbumBajaSoapIn">
+    <wsdl:part name="parameters" element="tns:AlbumBaja" />
+  </wsdl:message>
+  <wsdl:message name="AlbumBajaSoapOut">
+    <wsdl:part name="parameters" element="tns:AlbumBajaResponse" />
+  </wsdl:message>
+  <wsdl:message name="AlbumModificarSoapIn">
+    <wsdl:part name="parameters" element="tns:AlbumModificar" />
+  </wsdl:message>
+  <wsdl:message name="AlbumModificarSoapOut">
+    <wsdl:part name="parameters" element="tns:AlbumModificarResponse" />
+  </wsdl:message>
+  <wsdl:message name="BandaIntegranteListadoSoapIn">
+    <wsdl:part name="parameters" element="tns:BandaIntegranteListado" />
+  </wsdl:message>
+  <wsdl:message name="BandaIntegranteListadoSoapOut">
+    <wsdl:part name="parameters" element="tns:BandaIntegranteListadoResponse" />
+  </wsdl:message>
+  <wsdl:message name="BandaIntegranteAltaSoapIn">
+    <wsdl:part name="parameters" element="tns:BandaIntegranteAlta" />
+  </wsdl:message>
+  <wsdl:message name="BandaIntegranteAltaSoapOut">
+    <wsdl:part name="parameters" element="tns:BandaIntegranteAltaResponse" />
+  </wsdl:message>
+  <wsdl:message name="BandaIntegranteBajaSoapIn">
+    <wsdl:part name="parameters" element="tns:BandaIntegranteBaja" />
+  </wsdl:message>
+  <wsdl:message name="BandaIntegranteBajaSoapOut">
+    <wsdl:part name="parameters" element="tns:BandaIntegranteBajaResponse" />
+  </wsdl:message>
+  <wsdl:message name="BandaAlbumListadoSoapIn">
+    <wsdl:part name="parameters" element="tns:BandaAlbumListado" />
+  </wsdl:message>
+  <wsdl:message name="BandaAlbumListadoSoapOut">
+    <wsdl:part name="parameters" element="tns:BandaAlbumListadoResponse" />
+  </wsdl:message>
+  <wsdl:message name="AlbumCancionListadoSoapIn">
+    <wsdl:part name="parameters" element="tns:AlbumCancionListado" />
+  </wsdl:message>
+  <wsdl:message name="AlbumCancionListadoSoapOut">
+    <wsdl:part name="parameters" element="tns:AlbumCancionListadoResponse" />
+  </wsdl:message>
+  <wsdl:message name="AlbumCancionAltaSoapIn">
+    <wsdl:part name="parameters" element="tns:AlbumCancionAlta" />
+  </wsdl:message>
+  <wsdl:message name="AlbumCancionAltaSoapOut">
+    <wsdl:part name="parameters" element="tns:AlbumCancionAltaResponse" />
+  </wsdl:message>
+  <wsdl:message name="AlbumCancionBajaSoapIn">
+    <wsdl:part name="parameters" element="tns:AlbumCancionBaja" />
+  </wsdl:message>
+  <wsdl:message name="AlbumCancionBajaSoapOut">
+    <wsdl:part name="parameters" element="tns:AlbumCancionBajaResponse" />
+  </wsdl:message>
+  <wsdl:portType name="MusicUDE_SericeSoap">
+    <wsdl:operation name="GeneroMusicalAlta">
+      <wsdl:input message="tns:GeneroMusicalAltaSoapIn" />
+      <wsdl:output message="tns:GeneroMusicalAltaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GeneroMusicalModificacion">
+      <wsdl:input message="tns:GeneroMusicalModificacionSoapIn" />
+      <wsdl:output message="tns:GeneroMusicalModificacionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GeneroMusicalBaja">
+      <wsdl:input message="tns:GeneroMusicalBajaSoapIn" />
+      <wsdl:output message="tns:GeneroMusicalBajaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GeneroMusicalListado">
+      <wsdl:input message="tns:GeneroMusicalListadoSoapIn" />
+      <wsdl:output message="tns:GeneroMusicalListadoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IntegrantesListado">
+      <wsdl:input message="tns:IntegrantesListadoSoapIn" />
+      <wsdl:output message="tns:IntegrantesListadoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IntegranteAlta">
+      <wsdl:input message="tns:IntegranteAltaSoapIn" />
+      <wsdl:output message="tns:IntegranteAltaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IntegranteBaja">
+      <wsdl:input message="tns:IntegranteBajaSoapIn" />
+      <wsdl:output message="tns:IntegranteBajaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IntegranteModificacion">
+      <wsdl:input message="tns:IntegranteModificacionSoapIn" />
+      <wsdl:output message="tns:IntegranteModificacionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IntegranteObtener">
+      <wsdl:input message="tns:IntegranteObtenerSoapIn" />
+      <wsdl:output message="tns:IntegranteObtenerSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="BandaObtener">
+      <wsdl:input message="tns:BandaObtenerSoapIn" />
+      <wsdl:output message="tns:BandaObtenerSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="BandaListado">
+      <wsdl:input message="tns:BandaListadoSoapIn" />
+      <wsdl:output message="tns:BandaListadoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="BandaAlta">
+      <wsdl:input message="tns:BandaAltaSoapIn" />
+      <wsdl:output message="tns:BandaAltaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="BandaBaja">
+      <wsdl:input message="tns:BandaBajaSoapIn" />
+      <wsdl:output message="tns:BandaBajaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="BandaModificar">
+      <wsdl:input message="tns:BandaModificarSoapIn" />
+      <wsdl:output message="tns:BandaModificarSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CancionListado">
+      <wsdl:input message="tns:CancionListadoSoapIn" />
+      <wsdl:output message="tns:CancionListadoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CancionAlta">
+      <wsdl:input message="tns:CancionAltaSoapIn" />
+      <wsdl:output message="tns:CancionAltaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CancionBaja">
+      <wsdl:input message="tns:CancionBajaSoapIn" />
+      <wsdl:output message="tns:CancionBajaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CancionModificacion">
+      <wsdl:input message="tns:CancionModificacionSoapIn" />
+      <wsdl:output message="tns:CancionModificacionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CancionObtener">
+      <wsdl:input message="tns:CancionObtenerSoapIn" />
+      <wsdl:output message="tns:CancionObtenerSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AlbumObtener">
+      <wsdl:input message="tns:AlbumObtenerSoapIn" />
+      <wsdl:output message="tns:AlbumObtenerSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AlbumListado">
+      <wsdl:input message="tns:AlbumListadoSoapIn" />
+      <wsdl:output message="tns:AlbumListadoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AlbumAlta">
+      <wsdl:input message="tns:AlbumAltaSoapIn" />
+      <wsdl:output message="tns:AlbumAltaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AlbumBaja">
+      <wsdl:input message="tns:AlbumBajaSoapIn" />
+      <wsdl:output message="tns:AlbumBajaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AlbumModificar">
+      <wsdl:input message="tns:AlbumModificarSoapIn" />
+      <wsdl:output message="tns:AlbumModificarSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="BandaIntegranteListado">
+      <wsdl:input message="tns:BandaIntegranteListadoSoapIn" />
+      <wsdl:output message="tns:BandaIntegranteListadoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="BandaIntegranteAlta">
+      <wsdl:input message="tns:BandaIntegranteAltaSoapIn" />
+      <wsdl:output message="tns:BandaIntegranteAltaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="BandaIntegranteBaja">
+      <wsdl:input message="tns:BandaIntegranteBajaSoapIn" />
+      <wsdl:output message="tns:BandaIntegranteBajaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="BandaAlbumListado">
+      <wsdl:input message="tns:BandaAlbumListadoSoapIn" />
+      <wsdl:output message="tns:BandaAlbumListadoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AlbumCancionListado">
+      <wsdl:input message="tns:AlbumCancionListadoSoapIn" />
+      <wsdl:output message="tns:AlbumCancionListadoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AlbumCancionAlta">
+      <wsdl:input message="tns:AlbumCancionAltaSoapIn" />
+      <wsdl:output message="tns:AlbumCancionAltaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AlbumCancionBaja">
+      <wsdl:input message="tns:AlbumCancionBajaSoapIn" />
+      <wsdl:output message="tns:AlbumCancionBajaSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="MusicUDE_SericeSoap" type="tns:MusicUDE_SericeSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GeneroMusicalAlta">
+      <soap:operation soapAction="http://tempuri.org/GeneroMusicalAlta" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GeneroMusicalModificacion">
+      <soap:operation soapAction="http://tempuri.org/GeneroMusicalModificacion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GeneroMusicalBaja">
+      <soap:operation soapAction="http://tempuri.org/GeneroMusicalBaja" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GeneroMusicalListado">
+      <soap:operation soapAction="http://tempuri.org/GeneroMusicalListado" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IntegrantesListado">
+      <soap:operation soapAction="http://tempuri.org/IntegrantesListado" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IntegranteAlta">
+      <soap:operation soapAction="http://tempuri.org/IntegranteAlta" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IntegranteBaja">
+      <soap:operation soapAction="http://tempuri.org/IntegranteBaja" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IntegranteModificacion">
+      <soap:operation soapAction="http://tempuri.org/IntegranteModificacion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IntegranteObtener">
+      <soap:operation soapAction="http://tempuri.org/IntegranteObtener" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BandaObtener">
+      <soap:operation soapAction="http://tempuri.org/BandaObtener" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BandaListado">
+      <soap:operation soapAction="http://tempuri.org/BandaListado" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BandaAlta">
+      <soap:operation soapAction="http://tempuri.org/BandaAlta" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BandaBaja">
+      <soap:operation soapAction="http://tempuri.org/BandaBaja" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BandaModificar">
+      <soap:operation soapAction="http://tempuri.org/BandaModificar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CancionListado">
+      <soap:operation soapAction="http://tempuri.org/CancionListado" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CancionAlta">
+      <soap:operation soapAction="http://tempuri.org/CancionAlta" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CancionBaja">
+      <soap:operation soapAction="http://tempuri.org/CancionBaja" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CancionModificacion">
+      <soap:operation soapAction="http://tempuri.org/CancionModificacion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CancionObtener">
+      <soap:operation soapAction="http://tempuri.org/CancionObtener" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AlbumObtener">
+      <soap:operation soapAction="http://tempuri.org/AlbumObtener" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AlbumListado">
+      <soap:operation soapAction="http://tempuri.org/AlbumListado" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AlbumAlta">
+      <soap:operation soapAction="http://tempuri.org/AlbumAlta" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AlbumBaja">
+      <soap:operation soapAction="http://tempuri.org/AlbumBaja" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AlbumModificar">
+      <soap:operation soapAction="http://tempuri.org/AlbumModificar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BandaIntegranteListado">
+      <soap:operation soapAction="http://tempuri.org/BandaIntegranteListado" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BandaIntegranteAlta">
+      <soap:operation soapAction="http://tempuri.org/BandaIntegranteAlta" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BandaIntegranteBaja">
+      <soap:operation soapAction="http://tempuri.org/BandaIntegranteBaja" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BandaAlbumListado">
+      <soap:operation soapAction="http://tempuri.org/BandaAlbumListado" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AlbumCancionListado">
+      <soap:operation soapAction="http://tempuri.org/AlbumCancionListado" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AlbumCancionAlta">
+      <soap:operation soapAction="http://tempuri.org/AlbumCancionAlta" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AlbumCancionBaja">
+      <soap:operation soapAction="http://tempuri.org/AlbumCancionBaja" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="MusicUDE_SericeSoap12" type="tns:MusicUDE_SericeSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GeneroMusicalAlta">
+      <soap12:operation soapAction="http://tempuri.org/GeneroMusicalAlta" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GeneroMusicalModificacion">
+      <soap12:operation soapAction="http://tempuri.org/GeneroMusicalModificacion" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GeneroMusicalBaja">
+      <soap12:operation soapAction="http://tempuri.org/GeneroMusicalBaja" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GeneroMusicalListado">
+      <soap12:operation soapAction="http://tempuri.org/GeneroMusicalListado" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IntegrantesListado">
+      <soap12:operation soapAction="http://tempuri.org/IntegrantesListado" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IntegranteAlta">
+      <soap12:operation soapAction="http://tempuri.org/IntegranteAlta" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IntegranteBaja">
+      <soap12:operation soapAction="http://tempuri.org/IntegranteBaja" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IntegranteModificacion">
+      <soap12:operation soapAction="http://tempuri.org/IntegranteModificacion" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IntegranteObtener">
+      <soap12:operation soapAction="http://tempuri.org/IntegranteObtener" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BandaObtener">
+      <soap12:operation soapAction="http://tempuri.org/BandaObtener" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BandaListado">
+      <soap12:operation soapAction="http://tempuri.org/BandaListado" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BandaAlta">
+      <soap12:operation soapAction="http://tempuri.org/BandaAlta" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BandaBaja">
+      <soap12:operation soapAction="http://tempuri.org/BandaBaja" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BandaModificar">
+      <soap12:operation soapAction="http://tempuri.org/BandaModificar" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CancionListado">
+      <soap12:operation soapAction="http://tempuri.org/CancionListado" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CancionAlta">
+      <soap12:operation soapAction="http://tempuri.org/CancionAlta" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CancionBaja">
+      <soap12:operation soapAction="http://tempuri.org/CancionBaja" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CancionModificacion">
+      <soap12:operation soapAction="http://tempuri.org/CancionModificacion" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CancionObtener">
+      <soap12:operation soapAction="http://tempuri.org/CancionObtener" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AlbumObtener">
+      <soap12:operation soapAction="http://tempuri.org/AlbumObtener" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AlbumListado">
+      <soap12:operation soapAction="http://tempuri.org/AlbumListado" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AlbumAlta">
+      <soap12:operation soapAction="http://tempuri.org/AlbumAlta" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AlbumBaja">
+      <soap12:operation soapAction="http://tempuri.org/AlbumBaja" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AlbumModificar">
+      <soap12:operation soapAction="http://tempuri.org/AlbumModificar" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BandaIntegranteListado">
+      <soap12:operation soapAction="http://tempuri.org/BandaIntegranteListado" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BandaIntegranteAlta">
+      <soap12:operation soapAction="http://tempuri.org/BandaIntegranteAlta" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BandaIntegranteBaja">
+      <soap12:operation soapAction="http://tempuri.org/BandaIntegranteBaja" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BandaAlbumListado">
+      <soap12:operation soapAction="http://tempuri.org/BandaAlbumListado" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AlbumCancionListado">
+      <soap12:operation soapAction="http://tempuri.org/AlbumCancionListado" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AlbumCancionAlta">
+      <soap12:operation soapAction="http://tempuri.org/AlbumCancionAlta" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AlbumCancionBaja">
+      <soap12:operation soapAction="http://tempuri.org/AlbumCancionBaja" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="MusicUDE_Serice">
+    <wsdl:port name="MusicUDE_SericeSoap" binding="tns:MusicUDE_SericeSoap">
+      <soap:address location="https://localhost:44314/MusicUDE-Service.asmx" />
+    </wsdl:port>
+    <wsdl:port name="MusicUDE_SericeSoap12" binding="tns:MusicUDE_SericeSoap12">
+      <soap12:address location="https://localhost:44314/MusicUDE-Service.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
